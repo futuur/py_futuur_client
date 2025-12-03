@@ -31,11 +31,11 @@ from py_futuur_client.client import Client
 client = Client(public_key='your_public_key', private_key='your_private_key')
 
 # Fetch latest markets
-markets = client.get_markets()
+markets = client.market.list()
 print(markets)
 
 # Fetch details for a specific market
-market = client.get_market(market_id=12345)
+market = client.market.get(market_id=12345)
 print(market)
 ```
 
