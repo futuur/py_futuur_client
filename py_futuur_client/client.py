@@ -4,6 +4,8 @@ import hmac
 import hashlib
 from datetime import datetime
 from requests import request
+
+from py_futuur_client.bets import BetAPI
 from .market import MarketAPI
 
 class Client:
@@ -12,6 +14,7 @@ class Client:
         self.private_key = private_key
         self.base_url = 'https://api.futuur.com/api/v1/'
         self.market = MarketAPI(client=self)
+        self.bets = BetAPI(client=self)
     
     def _generate_signature(self, params: dict) -> tuple:
         """
