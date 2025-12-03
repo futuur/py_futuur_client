@@ -13,3 +13,4 @@ __pycache__/
 .env.test
 .env.production
 py_futuur_client.egg-info
+test/
