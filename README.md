@@ -13,7 +13,7 @@ A Python package for developers and clients of [futuur.com](https://futuur.com) 
 ## Installation
 
 ```bash
-pip install py_futuur_client
+pip install py-futuur-client==1.0.0
 ```
 
 Or if using your local copy:
