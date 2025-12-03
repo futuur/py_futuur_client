@@ -21,3 +21,9 @@ class BetAPI:
         Position Short: Bet against a specific outcome. You win if any other outcome occurs.
         """
         return self.client._make_request(method='POST' ,endpoint='bets/', payload=payload)
+
+    def detail(self, id):
+        """
+        Return information on your bet, on a given market, for an outcome and currency.
+        """
+        return self.client._make_request(endpoint=f'bets/{id}')
