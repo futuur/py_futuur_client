@@ -5,7 +5,7 @@ import hashlib
 from datetime import datetime
 from requests import request
 
-from py_futuur_client.bets import BetAPI
+from py_futuur_client.bet import BetAPI
 from .market import MarketAPI
 
 class Client:
