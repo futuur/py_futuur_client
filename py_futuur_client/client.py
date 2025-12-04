@@ -6,6 +6,7 @@ from datetime import datetime
 from requests import request
 
 from py_futuur_client.bet import BetAPI
+from py_futuur_client.category import CategoryAPI
 from .market import MarketAPI
 
 class Client:
@@ -15,6 +16,7 @@ class Client:
         self.base_url = 'https://api.futuur.com/api/v1/'
         self.market = MarketAPI(client=self)
         self.bets = BetAPI(client=self)
+        self.category = CategoryAPI(client=self)
     
     def _generate_signature(self, params: dict) -> tuple:
         """
