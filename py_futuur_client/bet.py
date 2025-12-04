@@ -27,3 +27,15 @@ class BetAPI:
         Return information on your bet, on a given market, for an outcome and currency.
         """
         return self.client._make_request(endpoint=f'bets/{id}')
+    
+    def sell(self, id, payload: dict):
+        """
+        Sell your entire position (previously purchased) on an outcome for a given currency.
+        To sell the entire position, send a PATCH request with the bet ID.
+        For a partial sale, include the number of shares in the request body using the 'shares' field.
+        """
+        if not payload:
+            payload = dict()
+
+        return self.client._make_request(method='PATCH', endpoint=f'bets/{id}', payload=payload)
+    
