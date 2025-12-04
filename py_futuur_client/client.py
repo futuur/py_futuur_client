@@ -7,7 +7,8 @@ from requests import request
 
 from py_futuur_client.bet import BetAPI
 from py_futuur_client.category import CategoryAPI
-from .market import MarketAPI
+from py_futuur_client.market import MarketAPI
+from py_futuur_client.user import UseAPI
 
 class Client:
     def __init__(self, public_key: str, private_key: str):
@@ -17,6 +18,7 @@ class Client:
         self.market = MarketAPI(client=self)
         self.bets = BetAPI(client=self)
         self.category = CategoryAPI(client=self)
+        self.user = UseAPI(client=self)
     
     def _generate_signature(self, params: dict) -> tuple:
         """
