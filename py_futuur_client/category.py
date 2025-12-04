@@ -5,13 +5,13 @@ class CategoryAPI:
     
     def list(self, params: dict={}):
         """
-        Return list of categories
+        Return list of categories.
         """
         return self.client._make_request(endpoint='categories/', params=params)
     
     def get(self, id):
         """
-        Return category detail
+        Return category detail.
         """
         return self.client._make_request(endpoint=f'categories/{id}')
     
@@ -24,7 +24,14 @@ class CategoryAPI:
     
     def list_main(self):
         """
-        List all active categories marked as main
+        List all active categories marked as main.
         Endpoint: GET /api/v1/categories/main/
         """
         return self.client._make_request(endpoint='categories/main/')
+    
+    def list_root(self):
+        """
+        Return root categories.
+        Endpoint: GET /api/v1/categories/root/
+        """
+        return self.client._make_request(endpoint='categories/root/')
