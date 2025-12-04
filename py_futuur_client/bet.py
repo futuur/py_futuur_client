@@ -48,10 +48,22 @@ class BetAPI:
 
         return self.client._make_request(endpoint=f'bets/{id}/get_partial_amount_on_sell/', payload=payload)
 
-    def get_latest_purchase_actions(self, id, payload: dict):
+    def get_latest_purchase_actions(self):
         """
         Returns the most recent purchased actions on the site, without filtering by current user.
         """
         return self.client._make_request(endpoint=f'bets/latest_purchase_actions/')
+    
+    def get_current_rates(self):
+        """ 
+        Returns a dict with latest rates. Each dict gives rates for currency field.
+        """
+        return self.client._make_request(endpoint=f'bets/rates/')
+    
+    def simulate_purchase(self, params: dict):
+        """
+        Calculates the amount that a user will pay and the number of shares they will receive if their selected outcome is correct
+        """
+        return self.client._make_request(endpoint=f'bets/simulate_purchase/', params=params)
 
     
