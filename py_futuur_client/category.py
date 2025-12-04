@@ -9,3 +9,9 @@ class CategoryAPI:
         """
         return self.client._make_request(endpoint='categories/', params=params)
     
+    def get(self, id):
+        """
+        Return category detail
+        """
+        return self.client._make_request(endpoint=f'categories/{id}')
+    
