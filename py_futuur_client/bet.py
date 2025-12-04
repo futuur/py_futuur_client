@@ -48,4 +48,10 @@ class BetAPI:
 
         return self.client._make_request(endpoint=f'bets/{id}/get_partial_amount_on_sell/', payload=payload)
 
+    def get_latest_purchase_actions(self, id, payload: dict):
+        """
+        Returns the most recent purchased actions on the site, without filtering by current user.
+        """
+        return self.client._make_request(endpoint=f'bets/latest_purchase_actions/')
+
     
