@@ -21,3 +21,10 @@ class CategoryAPI:
         Endpoint: GET /api/v1/categories/featured/
         """
         return self.client._make_request(endpoint='categories/featured/')
+    
+    def list_main(self):
+        """
+        List all active categories marked as main
+        Endpoint: GET /api/v1/categories/main/
+        """
+        return self.client._make_request(endpoint='categories/main/')
