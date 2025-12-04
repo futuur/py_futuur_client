@@ -15,3 +15,9 @@ class CategoryAPI:
         """
         return self.client._make_request(endpoint=f'categories/{id}')
     
+    def list_featured(self):
+        """
+        Return top 10 featured categories highest volume first.
+        Endpoint: GET /api/v1/categories/featured/
+        """
+        return self.client._make_request(endpoint='categories/featured/')
