@@ -35,3 +35,10 @@ class CategoryAPI:
         Endpoint: GET /api/v1/categories/root/
         """
         return self.client._make_request(endpoint='categories/root/')
+    
+    def list_root_and_main_children(self, params: dict = {}):
+        """
+        Return root categories and main children.
+        Endpoint: GET /api/v1/categories/root_and_main_children/
+        """
+        return self.client._make_request(endpoint='categories/root_and_main_children/', params=params)
