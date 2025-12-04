@@ -37,5 +37,15 @@ class BetAPI:
         if not payload:
             payload = dict()
 
-        return self.client._make_request(method='PATCH', endpoint=f'bets/{id}', payload=payload)
+        return self.client._make_request(method='PATCH', endpoint=f'bets/{id}/', payload=payload)
+    
+    def get_partial_amount_on_sell(self, id, payload: dict):
+        """
+        Calculates the amount that a user will receive if they sell a portion of their shares.
+        """
+        if not payload:
+            payload = dict()
+
+        return self.client._make_request(endpoint=f'bets/{id}/get_partial_amount_on_sell/', payload=payload)
+
     
