@@ -7,7 +7,7 @@ def read(fname):
 
 setup(
     name='py-futuur-client', 
-    version='1.0.0',
+    version='1.0.2',
     packages=find_packages(),
     
     author='Futuur .inc',

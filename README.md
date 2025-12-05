@@ -18,7 +18,7 @@ A Python client library for developers and clients of [futuur.com](https://futuu
 ## ⚙️ Installation
 
 ```bash
-pip install py-futuur-client==1.0.0
+pip install py-futuur-client==1.0.2
 ```
 
 ## 🚀 Quick Start (How to Use)
