@@ -8,7 +8,7 @@ from requests import request
 from py_futuur_client.bet import BetAPI
 from py_futuur_client.category import CategoryAPI
 from py_futuur_client.market import MarketAPI
-from py_futuur_client.orders import OrdersAPI
+from py_futuur_client.orders import LimitOrderAPI
 from py_futuur_client.user import UseAPI
 
 class Client:
@@ -20,7 +20,7 @@ class Client:
         self.bets = BetAPI(client=self)
         self.category = CategoryAPI(client=self)
         self.user = UseAPI(client=self)
-        self.orders = OrdersAPI(client=self)
+        self.limit_order = LimitOrderAPI(client=self)
     
     def _generate_signature(self, params: dict) -> tuple:
         """
@@ -96,4 +96,6 @@ class Client:
         try:
             return response.json()
         except:
+            if response.status_code == 204:
+                return {'response': 'No content returned'}
             return {'error': 'Failed to parse response', 'text': response.text}
