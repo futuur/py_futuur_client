@@ -15,10 +15,10 @@ A Python client library for developers and clients of [futuur.com](https://futuu
 - Python 3.10+
 - A Futuur Public API Key and Private Key (obtainable from your Account Settings in the "API" section).
 
-## ⚙️ Installation
+## Installation
 
 ```bash
-pip install py-futuur-client==1.0.3
+pip install py-futuur-client==1.0.4
 ```
 
 ## Quick Start (How to Use)
