@@ -2,7 +2,7 @@
 
 A Python client library for developers and clients of [futuur.com](https://futuur.com) to interacting with the public Futuur API. This package provides easy-to-use classes to access market data, categories, user details, and trading endpoints (bets and orders).
 
-## 🌟 Features
+## Features
 
 - **Secure Authentication**: Handles HMAC-SHA512 signing automatically using your private key.
 - **Market Data**: Easily fetch lists of available markets, retrieve specific market details, and get real-time order book data.
@@ -10,7 +10,7 @@ A Python client library for developers and clients of [futuur.com](https://futuu
 - **Category Navigation**: Access various category listings (featured, main, root) to organize markets.
 - **Trading (Bets & Orders)**: Supports core trading actions including purchasing/selling positions and placing/cancelling Limit Orders.
 
-## 🔑 Requirements
+## Requirements
 
 - Python 3.10+
 - A Futuur Public API Key and Private Key (obtainable from your Account Settings in the "API" section).
@@ -21,7 +21,7 @@ A Python client library for developers and clients of [futuur.com](https://futuu
 pip install py-futuur-client==1.0.3
 ```
 
-## 🚀 Quick Start (How to Use)
+## Quick Start (How to Use)
 
 ### 1. Import and Instantiate the Client
 
@@ -42,7 +42,7 @@ client = Client(public_key=PUBLIC_KEY, private_key=PRIVATE_KEY)
 
 The client's architecture maps directly to the API documentation's groups, allowing you to access functionalities via simple dot notation (e.g., client.market for all market endpoints).
 
-### 💰 Trading — Bets (.bet)
+### Trading — Bets (.bet)
 
 Interact wagers (.list, .purchase, .detail, .sell, .get_partial_amount_on_sell, .get_latest_purchase_actions, .get_current_rates, .simulate_purchase).
 
@@ -53,7 +53,7 @@ active_bets = client.bet.list(params={'active': True, 'limit': 10})
 print(f"You have {len(active_bets['results'])} active bets.")
 ```
 
-### 🏷️ Categories (.category)
+### Categories (.category)
 
 Interact with categories (.list, .get, .list_featured, .list_main, .list_root, .list_root_and_main_children).
 
@@ -66,7 +66,7 @@ for category in root_categories:
     print(f"  - {category['title']}")
 ```
 
-### 📊 Market Data (.market)
+### Market Data (.market)
 
 Interact with market (.list, .detail, .get_order_book, .get_related_markets, .suggest_market)
 
@@ -83,7 +83,7 @@ for market in markets_list['results']:
     print(f"- ID {market['id']}: {market['title']}")
 ```
 
-### 👤 User (.user)
+### User (.user)
 
 Interact we user (.get_datails)
 
@@ -94,7 +94,7 @@ print(f"Logged in as: {my_details['username']}")
 print(f"Play Money Wagers: {my_details['wagers_count_play_money']}")
 ```
 
-### 📜 Trading — Limit Orders (.limit_order)
+### Trading — Limit Orders (.limit_order)
 
 Interact with orders (.list, .create, .cancel).
 
