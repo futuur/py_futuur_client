@@ -9,3 +9,10 @@ class OrdersAPI:
         Endpoint: GET /api/v1/orders/
         """
         return self.client._make_request(endpoint='orders/', params=params)
+    
+    def create(self, payload: dict):
+        """
+        Place a limit order in the order book.
+        Endpoint: POST /api/v1/orders/
+        """
+        return self.client._make_request(endpoint='orders/', method='POST', payload=payload)
